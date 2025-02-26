@@ -51,6 +51,17 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    position: fixed;
+}
+
+#darkModeToggle {
+    top: 10px;
+    left: 10px;
+}
+
+#translateButton {
+    top: 10px;
+    right: 10px;
 }
 
 button:hover {
