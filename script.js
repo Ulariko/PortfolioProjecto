@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.classList.toggle("dark-mode");
     });
 
-    // Language translation to Japanese
+    // Language translation toggle
     const translateButton = document.createElement("button");
     translateButton.textContent = "日本語";
     translateButton.style.position = "fixed";
@@ -36,13 +36,35 @@ document.addEventListener("DOMContentLoaded", function () {
     translateButton.style.right = "10px";
     document.body.appendChild(translateButton);
     
+    let isJapanese = false;
     translateButton.addEventListener("click", function () {
-        document.querySelector("h1").textContent = "あなたの名前";
-        document.querySelector("#about h2").textContent = "私について";
-        document.querySelector("#about p").textContent = "自分自身についての短い紹介を書いてください。";
-        document.querySelector("#projects h2").textContent = "プロジェクト";
-        document.querySelector("#projects p").textContent = "リンクと説明付きの作品を紹介します。";
-        document.querySelector("#contact h2").textContent = "連絡先";
-        document.querySelector("#contact p").textContent = "メール: your.email@example.com";
+        if (!isJapanese) {
+            document.querySelector("h1").textContent = "Assan Ular";
+            document.querySelector("#about h2").textContent = "私について";
+            document.querySelector("#about p").textContent = "Hi! My name is Ular and I am 16 years old. I am from Kazakhstan, Astana and study 10th grade in the Bilim-Innovation school for Boys. My main interest is 3D computer graphics focused on Game Development and consider it as a future field of work. In addition I have several hobbies like sketching and reading books. My personality type in MBTI is INFJ.";
+            document.querySelector("#projects h2").textContent = "プロジェクト";
+            document.querySelector("#projects p").textContent = "1) Chemistry Olympiads
+2) Informatrix 2025
+3) Digital Design Contest";
+            document.querySelector("#contact h2").textContent = "連絡先";
+            document.querySelector("#contact p").textContent = "Email: ular.assan@gmail.com
+Phone Number: +7 *******608
+Telegram: @ulariko";
+            translateButton.textContent = "English";
+        } else {
+            document.querySelector("h1").textContent = "Assan Ular";
+            document.querySelector("#about h2").textContent = "About Me";
+            document.querySelector("#about p").textContent = "Hi! My name is Ular and I am 16 years old. I am from Kazakhstan, Astana and study 10th grade in the Bilim-Innovation school for Boys. My main interest is 3D computer graphics focused on Game Development and consider it as a future field of work. In addition I have several hobbies like sketching and reading books. My personality type in MBTI is INFJ.";
+            document.querySelector("#projects h2").textContent = "Projects";
+            document.querySelector("#projects p").textContent = "1) Chemistry Olympiads
+2) Informatrix 2025
+3) Digital Design Contest";
+            document.querySelector("#contact h2").textContent = "Contact";
+            document.querySelector("#contact p").textContent = "Email: ular.assan@gmail.com
+Phone Number: +7 *******608
+Telegram: @ulariko";
+            translateButton.textContent = "日本語";
+        }
+        isJapanese = !isJapanese;
     });
 });
